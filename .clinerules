@@ -1,0 +1,14 @@
+# Project Structure
+- React Native app built with Expo and TypeScript.
+- Uses Tailwind CSS (via NativeWind) for styling.
+
+# Data Model
+- Core entities: Categories, Items, Fields.
+- Users can define custom Items and Fields.
+
+# Time Tracking
+- App automatically tracks timestamps for "Event" category Items (e.g., Workout Start, Bedtime).
+
+# User Preferences
+- The user prefers to track activities like Running, Meditation, and Yoga.
+- The user prefers detailed logging, including custom fields.

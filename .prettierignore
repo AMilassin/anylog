@@ -1,0 +1,6 @@
+# Ignore artifacts:
+dist/
+coverage/
+TODO.md
+
+playwright-report/

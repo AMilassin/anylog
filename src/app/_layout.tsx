@@ -7,6 +7,7 @@ import { View } from "react-native";
 import "react-native-reanimated";
 
 import "../../global.css";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -26,13 +27,13 @@ export default function RootLayout() {
     return null;
   }
 
-  return (
-    <View>
+return (
+    <SafeAreaView style={{ flex: 1 }}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }

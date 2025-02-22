@@ -5,7 +5,6 @@ import { Txt } from "@components/Text";
 export default function Home() {
   return (
     <View>
-      <Txt>something</Txt>
     </View>
   );
 }

@@ -2,21 +2,13 @@ import * as SQLite from "expo-sqlite";
 
 import { migrateDbIfNeeded } from "../dbInit";
 
-const tableExists = async (
-  db: SQLite.SQLiteDatabase,
-  tableName: string
-): Promise<boolean> => {
-  const result = await db.getFirstAsync<{ name: string }>(
-    `SELECT name FROM sqlite_master WHERE type='table' AND name=?`,
-    [tableName]
-  );
+const tableExists = async (db: SQLite.SQLiteDatabase, tableName: string): Promise<boolean> => {
+  const result = await db.getFirstAsync<{ name: string }>(`SELECT name FROM sqlite_master WHERE type='table' AND name=?`, [tableName]);
   return !!result;
 };
 
 const getUserVersion = async (db: SQLite.SQLiteDatabase): Promise<number> => {
-  const result = await db.getFirstAsync<{ user_version: number }>(
-    "PRAGMA user_version"
-  );
+  const result = await db.getFirstAsync<{ user_version: number }>("PRAGMA user_version");
   return result?.user_version || 0;
 };
 
@@ -31,7 +23,7 @@ describe("migrateDbIfNeeded", () => {
 
   afterEach(async () => {
     await db.closeAsync();
-  })
+  });
 
   it("should create tables if user_version is 0", async () => {
     await migrateDbIfNeeded(db);

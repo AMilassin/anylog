@@ -5,7 +5,7 @@
 - TypeScript
 - Expo
 - React-Native
-- NativeWind
+- NativeWind (use `className` for defining tailwind classes!)
 - Tailwind CSS
 
 ## Development Setup
